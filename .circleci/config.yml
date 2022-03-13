@@ -37,7 +37,7 @@ jobs:
           command: cat /proc/self/cgroup
       - run:
           name: Installing ko
-          command: go install github.com/dprotaso/ko@ca03f79ce5927a66b6c355da3e408f4c40abc156
+          command: go install github.com/dprotaso/ko@20f894767622e8a5b789564516b659ff37157173
       - setup_remote_docker:
           version: 20.10.11
           docker_layer_caching: true
