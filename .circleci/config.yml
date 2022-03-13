@@ -33,6 +33,9 @@ jobs:
             - go-build-{{ arch }}-{{ checksum "go.sum" }}-{{ .Revision }}
             - go-build-{{ arch }}-{{ checksum "go.sum" }}
       - run:
+          name: nprocs
+          command: nprocs
+      - run:
           name: Installing ko
           command: go install go install github.com/dprotaso/ko@397fbe42bf38546117cdc55e1244f28280cc2650
       - setup_remote_docker:
