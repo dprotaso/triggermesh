@@ -42,7 +42,7 @@ jobs:
           name: Publishing container images
           command: IMAGE_TAG=${CIRCLE_TAG:-${CIRCLE_SHA1}} make release
           environment:
-            KO_DOCKER_REPO: gcr.io/triggermesh
+            KO_DOCKER_REPO: gcr.io/cf-elafros-dog/dave/triggermesh
             DIST_DIR: /tmp/dist/
       - persist_to_workspace:
           root: /tmp/
