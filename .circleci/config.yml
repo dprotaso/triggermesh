@@ -26,15 +26,15 @@ jobs:
       - run:
           name: Adding Docker credHelpers for GCR
           command: gcloud auth configure-docker
-      - go/load-cache
-      - restore_cache:
-          name: Restoring Go build cache
-          keys:
-            - go-build-{{ arch }}-{{ checksum "go.sum" }}-{{ .Revision }}
-            - go-build-{{ arch }}-{{ checksum "go.sum" }}
+      # - go/load-cache
+      # - restore_cache:
+      #     name: Restoring Go build cache
+      #     keys:
+      #       - go-build-{{ arch }}-{{ checksum "go.sum" }}-{{ .Revision }}
+      #       - go-build-{{ arch }}-{{ checksum "go.sum" }}
       - run:
           name: nprocs
-          command: nprocs
+          command: cat /proc/self/cgroup
       - run:
           name: Installing ko
           command: go install go install github.com/dprotaso/ko@397fbe42bf38546117cdc55e1244f28280cc2650
