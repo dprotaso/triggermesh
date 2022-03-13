@@ -55,7 +55,6 @@ workflows:
   test-and-publish:
     jobs:
       - publish-image:
-          context: production
           filters:
             tags:
               only: /^v([0-9]+)\.([0-9]+)\.([0-9]+)(?:-([0-9A-Za-z-]+(?:\.[0-9A-Za-z-]+)*))?(?:\+[0-9A-Za-z-]+)?$/
